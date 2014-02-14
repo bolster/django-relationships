@@ -20,6 +20,10 @@ class UserRelationshipAdmin(UserAdmin):
 class RelationshipStatusAdmin(admin.ModelAdmin):
     form = RelationshipStatusAdminForm
 
-admin.site.unregister(User)
-admin.site.register(User, UserRelationshipAdmin)
+try:
+    admin.site.unregister(User)
+    admin.site.register(User, UserRelationshipAdmin)
+except:
+    pass
+
 admin.site.register(RelationshipStatus, RelationshipStatusAdmin)
